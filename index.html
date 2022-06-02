@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Italianno&family=PT+Serif:ital@1&family=Poppins:wght@400;600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                font-family: 'Italianno' , sans-serif;
+            }
+            div{
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-image: linear-gradient(#00c3ff,#ffff1c);
+            }
+            p{
+                width: 500px;
+                height: 100px;
+                background-image: linear-gradient(#16bffd, #cb3066);
+                color: white;
+                line-height: 100px;
+                text-align: center;
+                font-size: 60px;
+                box-shadow: 1px 1px 0px #000,
+                            2px 2px 0px #000,
+                            3px 3px 0px #000,
+                            4px 4px 0px #000,
+                            5px 5px 0px #000,
+                            6px 6px 0px #000;
+            }
+            h1{
+                word-spacing: 10px;
+                letter-spacing: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>COUNTDOWN BEGINS</h1>
+            <p id="demo">
+
+            </p>
+        </div>
+        <script>
+            var dest = new Date("june 13,2022 12:00:00").getTime();
+            var x = setInterval(function(){
+            var now = new Date().getTime();
+            var diff = dest - now
+            console.log (diff);
+            var days = Math.floor(diff / (1000*60*60*24)) ;
+            console.log(days);
+            var hours = Math.floor(diff % (1000*60*60*24)/(1000*60*60));
+            console.log(hours);
+            var minutes = Math.floor(diff % (1000*60*60) / (1000*60));
+            console.log(minutes)
+            var seconds = Math.floor(diff % (1000*60) / (1000));
+            console.log(seconds)
+            document.getElementById("demo").innerHTML = days + "d: " + hours + "h: "
+        + minutes + "m: " + seconds + "s ";
+        }, 1000)
+        
+        </script>
+    </body>
+</html> 
